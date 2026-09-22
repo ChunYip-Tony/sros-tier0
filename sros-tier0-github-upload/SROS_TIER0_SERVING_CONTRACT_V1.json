@@ -1,0 +1,31 @@
+{
+  "schema": "SROS_TIER0_SERVING_CONTRACT_V1",
+  "department": "Seafood",
+  "entrypoint": "quick_check_tier0_router.py",
+  "query_contract": {
+    "numeric": "SEAFOOD_EXACT_NUMERIC_INDEX_CURRENT.txt",
+    "name_alias": "SEAFOOD_NAME_ALIAS_EXACT_INDEX_CURRENT.txt",
+    "ready_state": "SEAFOOD_QUICK_READY_STATE.json"
+  },
+  "allowed_query_path": [
+    "classify numeric vs name/alias",
+    "read READY state",
+    "one exact index lookup",
+    "return precomputed row"
+  ],
+  "prohibited": [
+    "Library-wide search",
+    "Google Drive search",
+    "raw source scan",
+    "SQLite/history scan",
+    "on-demand calculation",
+    "fallback discovery"
+  ],
+  "status_semantics": {
+    "HIT": "render precomputed row immediately",
+    "MISS": "fail fast as TIER0_MISS",
+    "BLOCKED": "fail fast; do not serve stale/ambiguous data",
+    "PATH_UNAVAILABLE": "serving path unavailable; do not reinterpret as data miss"
+  },
+  "runtime_exposure_requirement": "Expose this router as a callable ChatGPT/MCP/plugin tool. File presence alone is not tool registration."
+}

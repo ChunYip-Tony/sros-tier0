@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-21",
+  "status": "PASS",
+  "serving_directory": "co-located router + READY state + current name/numeric indexes",
+  "tests": [
+    {
+      "query": "Sierra",
+      "expected": "HIT TIER0B_NAME_ALIAS",
+      "actual": "HIT TIER0B_NAME_ALIAS",
+      "profile_id": "Seafood|24052100000"
+    },
+    {
+      "query": "Rex sole",
+      "expected": "HIT TIER0B_NAME_ALIAS",
+      "actual": "HIT TIER0B_NAME_ALIAS",
+      "profile_id": "Seafood|24050700000"
+    },
+    {
+      "query": "1341069",
+      "expected": "HIT TIER0A_NUMERIC",
+      "actual": "HIT TIER0A_NUMERIC",
+      "profile_id": "Seafood|87866500194"
+    },
+    {
+      "query": "999999999999",
+      "expected": "MISS TIER0_MISS",
+      "actual": "MISS TIER0_MISS"
+    }
+  ],
+  "sierra_row": "SIERRA | UPC 24052100000 | Article 1341521 | Family 1341521 | UOM LB | Price $4.99 REG | Cost $2.19 | GP 56.1% | OH 64.99 LB | DOH 9 | DOS 14.41 | UPC7D 3.86/day | Family7D 4.51/day | Sweet $5 [HIGH] | WGPM $4.99 | A/B/C $N/A/$N/A/$N/A | Receipt 2026-09-11 | QA READY",
+  "note": "Serving logic is valid. Remaining platform dependency is registering/exposing the router as a callable runtime tool."
+}
