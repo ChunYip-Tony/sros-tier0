@@ -1,0 +1,54 @@
+{
+  "schema": "SEAFOOD_QUICK_READY_STATE_V42",
+  "status": "READY",
+  "generated_utc": "2026-09-22T05:13:36.734841+00:00",
+  "service_master_sha256": "99ab279fc440c0ec43ad8f64f1d518faff0ec7dfafb632fe730390db59c81553",
+  "master_version": "52",
+  "serving_contract": "FULL_RELEASE_BOUND_TIER0_ONE_CALL",
+  "fallback_policy": "STRICT_FAIL_FAST; PATH_UNAVAILABLE != MISS != BLOCKED; NO RAW/LIBRARY/SQLITE SUBSTITUTE",
+  "quick_check_ready": true,
+  "upload_batch": {
+    "batch_id": "FROZEN-ABC-0918-CORRECTED",
+    "sources": [
+      {
+        "name": "F INV 0918 2026 (2)(1).xlsx",
+        "sha256": "bdcf0f40f5143030db24ec060b1efe69e75fef41216e4c57439b1ba0c11f0807",
+        "Domain": "Company Suggested Price ABC",
+        "Status": "INGESTED_CURRENT_AUTHORITY",
+        "Coverage": "2026-09-18",
+        "Canonical_Source": "F INV 0918 2026 (2)(1).xlsx",
+        "Profile_Ingestion_Status": "INGESTED",
+        "accepted": true
+      }
+    ]
+  },
+  "checks": {
+    "sqlite_integrity": "ok",
+    "seafood_dirty_profiles": 0,
+    "seafood_dirty_families": 0,
+    "numeric_index_master_sha": "99ab279fc440c0ec43ad8f64f1d518faff0ec7dfafb632fe730390db59c81553",
+    "alias_index_master_sha": "99ab279fc440c0ec43ad8f64f1d518faff0ec7dfafb632fe730390db59c81553",
+    "company_abc_source_rows": 281,
+    "company_abc_changed_profiles": 694,
+    "company_abc_skipped_rows": 23,
+    "tier0_delta_status": "SUPERSEDED_BY_FULL_RELEASE",
+    "tier0_service_level": "TIER0_CURRENT_FULL_CACHE_READY",
+    "full_cache_status": "PASS"
+  },
+  "issues": [],
+  "artifacts": {
+    "numeric_index": "SEAFOOD_EXACT_NUMERIC_INDEX_CURRENT.txt",
+    "numeric_index_sha256": "92d26b628b4cbb65ba4fb3bb34c90e580c46fadce8e7f356512a6fb71d4bd0e1",
+    "alias_index": "SEAFOOD_NAME_ALIAS_EXACT_INDEX_CURRENT.txt",
+    "alias_index_sha256": "1146753a17382621bec28a13743b78aa94863ebf8046197a093d33efe8c34820"
+  },
+  "fast_lookup_build_id": "FL3_3_M52_20260922T051336Z",
+  "repairs": [
+    {
+      "type": "TIER0_ALIAS_REPAIR",
+      "alias": "BONITO",
+      "target_profile": "Seafood|24051500000",
+      "index_sha256": "1146753a17382621bec28a13743b78aa94863ebf8046197a093d33efe8c34820"
+    }
+  ]
+}

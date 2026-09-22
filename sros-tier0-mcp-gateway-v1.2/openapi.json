@@ -1,0 +1,107 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SROS Tier-0",
+    "version": "1.2.0",
+    "description": "Store #1032 Seafood RapidOps Tier-0 exact precomputed Quick Check API. No fallback discovery and no query-time calculations."
+  },
+  "servers": [
+    {
+      "url": "https://sros-tier0-live-production.up.railway.app"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "health",
+        "summary": "Check SROS Tier-0 health",
+        "responses": {
+          "200": {
+            "description": "Service health"
+          }
+        }
+      }
+    },
+    "/quick-check": {
+      "get": {
+        "operationId": "quickCheck",
+        "summary": "Run exact SROS Tier-0 Quick Check",
+        "description": "Exact numeric or name/alias lookup against precomputed Seafood Tier-0 indexes.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Exact UPC, article, family, item name, or alias"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tier-0 HIT, MISS, or BLOCKED"
+          },
+          "400": {
+            "description": "Query required"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/ready": {
+      "get": {
+        "operationId": "ready",
+        "summary": "Read SROS READY state",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current READY state"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/mcp": {
+      "post": {
+        "operationId": "mcp",
+        "summary": "MCP Streamable HTTP JSON-RPC endpoint",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "MCP JSON-RPC response"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "SROS_API_TOKEN"
+      }
+    }
+  }
+}
